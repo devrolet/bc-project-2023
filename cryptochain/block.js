@@ -13,6 +13,7 @@ class Block {
     return new this(GENESIS_DATA);
   }
 
+  // Mine Block Method
   static mineBlock({ lastBlock, data }) {
     return new this({
       timestamp: Date.now(),
@@ -20,6 +21,7 @@ class Block {
       data
     });
   }
+
 }
 
 module.exports = Block;
