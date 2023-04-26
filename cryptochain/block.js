@@ -12,6 +12,8 @@ class Block {
   static genesis() {
     return new this(GENESIS_DATA);
   }
+
+
 }
 
 module.exports = Block;
