@@ -1,2 +1,3 @@
 node_modules
-./blockchain-progress.txt
+blockchain-progress.txt
+pubsub.js
