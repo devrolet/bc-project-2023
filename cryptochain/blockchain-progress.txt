@@ -75,3 +75,4 @@ Improved the CryptoHash and SHA256
 
 Addressed Update transaction edge cases where amounts are subtracted from the sender and added to the recipient
 
+Added transaction updates to API
