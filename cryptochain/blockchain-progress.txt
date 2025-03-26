@@ -56,3 +56,15 @@ Started peers through alternate ports, and broadcasted chains when blocks were m
 Synchronized chains when new peers connected to the network.
 
 Optimized the implementation to avoid redundant interaction.
+
+04/27/2023-03/26/2025_______________________________________________________________________________
+
+I been bullshitting because I started a job on 05/01/2023. That ended and I somehow rediscovered this gem.
+
+I'm going to see it through
+
+03/26/2025_______________________________________________________________________________
+
+Add the ability to check validity of transactions by checking well-formed transactions while also invalidating fraudulent transactions
+
+
