@@ -73,5 +73,5 @@ Able to update transactions with multiple outputs
 
 Improved the CryptoHash and SHA256 
 
-Addressing Update transaction edge cases
+Addressed Update transaction edge cases where amounts are subtracted from the sender and added to the recipient
 
