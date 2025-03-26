@@ -67,4 +67,11 @@ I'm going to see it through
 
 Add the ability to check validity of transactions by checking well-formed transactions while also invalidating fraudulent transactions
 
+Added functionality for wallets to create transactions
+
+Able to update transactions with multiple outputs
+
+Improved the CryptoHash and SHA256 
+
+Addressing Update transaction edge cases
 
