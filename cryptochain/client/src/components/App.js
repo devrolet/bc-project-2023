@@ -1,7 +1,13 @@
 import React, { Component } from "react";
 
 class App extends Component{
-    state = { walletInfo: { address: 'fooxz7', balance: 9998 } };
+    state = { walletInfo: {} };
+
+    componentDidMount() {
+        fetch('http://localhost:3000/api/wallet-info')
+            .then(response => response.json())
+            .then(json => this.setState({ walletInfo: json }));
+    }
 
     render() {
         const { address, balance } = this.state.walletInfo;
