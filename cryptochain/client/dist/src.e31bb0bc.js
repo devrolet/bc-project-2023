@@ -20551,7 +20551,8 @@ var Blocks = /*#__PURE__*/function (_Component) {
       console.log('this.state', this.state);
       return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("h3", null, "Blocks"), this.state.blocks.map(function (block) {
         return /*#__PURE__*/_react.default.createElement("div", {
-          key: block.hash
+          key: block.hash,
+          className: "Block"
         }, block.hash);
       }));
     }
@@ -20584,6 +20585,7 @@ function _setPrototypeOf(t, e) { return _setPrototypeOf = Object.setPrototypeOf 
 function _defineProperty(e, r, t) { return (r = _toPropertyKey(r)) in e ? Object.defineProperty(e, r, { value: t, enumerable: !0, configurable: !0, writable: !0 }) : e[r] = t, e; }
 function _toPropertyKey(t) { var i = _toPrimitive(t, "string"); return "symbol" == _typeof(i) ? i : i + ""; }
 function _toPrimitive(t, r) { if ("object" != _typeof(t) || !t) return t; var e = t[Symbol.toPrimitive]; if (void 0 !== e) { var i = e.call(t, r || "default"); if ("object" != _typeof(i)) return i; throw new TypeError("@@toPrimitive must return a primitive value."); } return ("string" === r ? String : Number)(t); }
+// import logo from "../assets/logo.png";
 var App = /*#__PURE__*/function (_Component) {
   function App() {
     var _this;
@@ -20616,20 +20618,80 @@ var App = /*#__PURE__*/function (_Component) {
       var _this$state$walletInf = this.state.walletInfo,
         address = _this$state$walletInf.address,
         balance = _this$state$walletInf.balance;
-      return /*#__PURE__*/_react.default.createElement("div", null, /*#__PURE__*/_react.default.createElement("div", null, "Welcome to the Blockchain..."), /*#__PURE__*/_react.default.createElement("div", null, "Address: ", address), /*#__PURE__*/_react.default.createElement("div", null, "Balance: ", balance), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_Blocks.default, null));
+      return /*#__PURE__*/_react.default.createElement("div", {
+        className: "App"
+      }, /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", null, "Welcome to the Blockchain..."), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement("div", {
+        className: "WalletInfo"
+      }, /*#__PURE__*/_react.default.createElement("div", null, "Address: ", address), /*#__PURE__*/_react.default.createElement("div", null, "Balance: ", balance)), /*#__PURE__*/_react.default.createElement("br", null), /*#__PURE__*/_react.default.createElement(_Blocks.default, null));
     }
   }]);
 }(_react.Component);
 var _default = exports.default = App;
-},{"react":"../../node_modules/react/index.js","./Blocks":"components/Blocks.js"}],"index.js":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js","./Blocks":"components/Blocks.js"}],"../../node_modules/parcel-bundler/src/builtins/bundle-url.js":[function(require,module,exports) {
+var bundleURL = null;
+function getBundleURLCached() {
+  if (!bundleURL) {
+    bundleURL = getBundleURL();
+  }
+  return bundleURL;
+}
+function getBundleURL() {
+  // Attempt to find the URL of the current script and use that as the base URL
+  try {
+    throw new Error();
+  } catch (err) {
+    var matches = ('' + err.stack).match(/(https?|file|ftp|chrome-extension|moz-extension):\/\/[^)\n]+/g);
+    if (matches) {
+      return getBaseURL(matches[0]);
+    }
+  }
+  return '/';
+}
+function getBaseURL(url) {
+  return ('' + url).replace(/^((?:https?|file|ftp|chrome-extension|moz-extension):\/\/.+)?\/[^/]+(?:\?.*)?$/, '$1') + '/';
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+},{}],"../../node_modules/parcel-bundler/src/builtins/css-loader.js":[function(require,module,exports) {
+var bundle = require('./bundle-url');
+function updateLink(link) {
+  var newLink = link.cloneNode();
+  newLink.onload = function () {
+    link.remove();
+  };
+  newLink.href = link.href.split('?')[0] + '?' + Date.now();
+  link.parentNode.insertBefore(newLink, link.nextSibling);
+}
+var cssTimeout = null;
+function reloadCSS() {
+  if (cssTimeout) {
+    return;
+  }
+  cssTimeout = setTimeout(function () {
+    var links = document.querySelectorAll('link[rel="stylesheet"]');
+    for (var i = 0; i < links.length; i++) {
+      if (bundle.getBaseURL(links[i].href) === bundle.getBundleURL()) {
+        updateLink(links[i]);
+      }
+    }
+    cssTimeout = null;
+  }, 50);
+}
+module.exports = reloadCSS;
+},{"./bundle-url":"../../node_modules/parcel-bundler/src/builtins/bundle-url.js"}],"index.css":[function(require,module,exports) {
+var reloadCSS = require('_css_loader');
+module.hot.dispose(reloadCSS);
+module.hot.accept(reloadCSS);
+},{"_css_loader":"../../node_modules/parcel-bundler/src/builtins/css-loader.js"}],"index.js":[function(require,module,exports) {
 "use strict";
 
 var _react = _interopRequireDefault(require("react"));
 var _reactDom = require("react-dom");
 var _App = _interopRequireDefault(require("./components/App"));
+require("./index.css");
 function _interopRequireDefault(e) { return e && e.__esModule ? e : { default: e }; }
 (0, _reactDom.render)(/*#__PURE__*/_react.default.createElement(_App.default, null), document.getElementById('root'));
-},{"react":"../../node_modules/react/index.js","react-dom":"../../node_modules/react-dom/index.js","./components/App":"components/App.js"}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
+},{"react":"../../node_modules/react/index.js","react-dom":"../../node_modules/react-dom/index.js","./components/App":"components/App.js","./index.css":"index.css"}],"../../node_modules/parcel-bundler/src/builtins/hmr-runtime.js":[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
