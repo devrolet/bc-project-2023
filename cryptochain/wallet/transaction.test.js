@@ -81,7 +81,7 @@ describe('', () => {
     describe('when the transaction is invalid', () => {
       describe('and a transaction outputMap value is invalid', () => {
         it('returns false and logs an error', () => {
-          transaction.outputMap[senderWallet.publicKey] = 999999;
+          transaction.outputMap[senderWallet.publicKey] = 898989;
 
           expect(Transaction.validTransaction(transaction)).toBe(false);
           expect(errorMock).toHaveBeenCalled();
@@ -106,7 +106,7 @@ describe('', () => {
       it('throws an error', () => {
         expect(() => {
           transaction.update({
-            senderWallet, recipient: 'foo', amount: 999999
+            senderWallet, recipient: 'foo', amount: 898989
           })
         }).toThrow('Amount exceeds balance');
       });
