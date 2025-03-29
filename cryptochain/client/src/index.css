@@ -33,6 +33,14 @@ body {
     padding: 5%;
 }
 
+.ConductTransaction {
+    margin: 10%;
+}
+
+.ConductTransaction input {
+    margin: 15px;
+}
+
 /* TODO: Change to React Bootstrap */
 a, a:hover {
     color: #ededed;
