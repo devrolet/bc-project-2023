@@ -66,8 +66,9 @@ class TransactionPool extends Component {
                     bsStyle='primary'
                     onClick={this.fetchMineTransactions}
                     disabled={!this.hasTransactions()}
+                    title={!this.hasTransactions() ? "No transactions to mine" : "Mine transactions"}
                 >
-                    Mine the transactions 
+                    {this.hasTransactions() ? "Mine the transactions" : "No transactions to mine" }
                 </Button>
             </div>
         )
