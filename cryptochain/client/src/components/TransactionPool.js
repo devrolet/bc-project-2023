@@ -12,7 +12,8 @@ class TransactionPool extends Component {
     fetchTransactionPoolMap = () => {
         fetch(`${document.location.origin}/api/transaction-pool-map`)
             .then(response => response.json())
-            .then(json => this.setState({ transactionPoolMap: json }));
+            .then(json => this.setState({ transactionPoolMap: json }))
+            .catch(error => console.error(error))
     }
 
     fetchMineTransactions = () => {
@@ -22,7 +23,7 @@ class TransactionPool extends Component {
                     alert('success');
                     history.push('/blocks');
                 } else {
-                    alert('The mine-transactions block request did not complete');
+                    alert('The mine-transactions block request did not complete')
                 }
             })
     }
@@ -38,6 +39,11 @@ class TransactionPool extends Component {
 
     componentWillUnmount() {
         clearInterval(this.fetchPoolMapInterval);
+    }
+
+    // helper method 
+    hasTransactions = () => {
+        return Object.keys(this.state.transactionPoolMap).length > 0;
     }
 
     render() {
@@ -59,6 +65,7 @@ class TransactionPool extends Component {
                 <Button
                     bsStyle='primary'
                     onClick={this.fetchMineTransactions}
+                    disabled={!this.hasTransactions()}
                 >
                     Mine the transactions 
                 </Button>
