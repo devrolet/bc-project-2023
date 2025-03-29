@@ -114,3 +114,19 @@ Quicksand: <link href="https://fonts.googleapis.com/css?family=Quicksand" rel="s
 https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css
 
 https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js
+
+03/29/2025
+
+Created toggle-able transaction displays.
+
+Built a reusable frontend transaction component.
+
+Added routing for a multi-page application that renders different content based on the url.
+
+Supported the conducting of transactions through a form.
+
+Posted transactions through the fetch API.
+
+Visualized the transaction pool - and added real-time polling capabilities.
+
+Added a way to mine a block through the frontend.
