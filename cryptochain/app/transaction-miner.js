@@ -11,6 +11,10 @@ class TransactionMiner {
     mineTransactions() {
         const validTransactions = this.transactionPool.validTransactions();
 
+        if(Object.values(this.transactionPool.transactionMap).length==0) {
+            throw new Error('May not mine an empty transaction pool')
+        }
+
         validTransactions.push(
             Transaction.rewardTransaction({ minerWallet: this.wallet })
         );
