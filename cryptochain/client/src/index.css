@@ -28,3 +28,13 @@ body {
     padding: 5%;
     margin: 2%
 }
+
+.Transaction {
+    padding: 5%;
+}
+
+/* TODO: Change to React Bootstrap */
+a, a:hover {
+    color: #ededed;
+    text-decoration: underline;
+}
